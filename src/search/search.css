@@ -1,0 +1,22 @@
+.search__wrapper {
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 8px;
+  border-bottom: 1px solid var(--border_grey);
+}
+
+.search {
+  position: relative;
+}
+
+.search__button {
+  position: absolute;
+}
+
+.search__text {
+  width: 100%;
+  padding-left: 30px;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+}

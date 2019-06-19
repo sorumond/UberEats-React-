@@ -1,0 +1,59 @@
+.dish__list {
+  margin-top: 32px;
+  margin-left: -16px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-right: 0;
+}
+
+.dish {
+  padding: 16px;
+  display: flex;
+  flex-basis: 50%;
+  padding-right: 0;
+}
+
+.dish__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.dish__about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid var(--border_grey);
+  flex-grow: 1;
+  position: relative;
+}
+
+.dish__about::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--border_dark_grey);
+  opacity: 0.04;
+}
+
+.dish__name {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--font_black);
+}
+
+.dish__recipe {
+  color: var(--font_grey);
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.dish__photo {
+  width: 160px;
+  height: 160px;
+  flex-grow: 0;
+}

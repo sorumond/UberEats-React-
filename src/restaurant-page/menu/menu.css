@@ -1,0 +1,10 @@
+.menu__wrapper {
+  width: 1016px;
+  margin: 56px auto 80px;
+}
+
+.menu__type {
+  font-size: 22px;
+  line-height: 34px;
+  color: var(--font_black);
+}

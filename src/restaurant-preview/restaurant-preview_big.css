@@ -1,0 +1,50 @@
+.restaurant-preview__background {
+  background: url("image/d42ea9bbf7aff297c2e1eb5e5f3b7fa6-w1080-87.png") no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.restaurant-preview__wrapper--big {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.restaurant-preview--big {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  background: var(--white);
+  flex-basis: 389px;
+  padding: 38px;
+}
+
+.restaurant-preview__name--big {
+  flex-basis: 100%;
+  font-size: 36px;
+  line-height: 42px;
+  color: var(--font_black);
+  margin-top: 0;
+  margin-bottom: 54px;
+}
+
+.restaurant-preview__about--big {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--font_grey);
+  align-self: center;
+}
+
+.restaurant-preview__delivery-time--big {
+  padding: 8px 16px;
+  background-color: var(--background_black);
+  font-size: 13px;
+  line-height: 15px;
+  color: var(--white);
+  align-self: center;
+  border-radius: 16px;
+  margin-bottom: 0;
+}

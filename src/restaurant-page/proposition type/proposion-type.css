@@ -1,0 +1,30 @@
+.proposition-type {
+  border-bottom: 1px solid var(--border_light_grey);
+}
+
+.proposition-type__wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.proposition-type__list {
+  display: flex;
+  padding-left: 0;
+  margin: 0;
+}
+
+.proposition-type__item {
+  list-style: none;
+  text-decoration: none;
+  padding-top: 32px;
+  padding-bottom: 29px;
+  margin-right: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--font_grey);
+}
+
+.proposition-type__item--active {
+  color: var(--font-green);
+}
