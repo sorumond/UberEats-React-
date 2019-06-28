@@ -1,5 +1,5 @@
 import React from 'react';
-import './restaurant-preview.css';
+import './restaurant-preview_big.css';
 
 export function RestaurantPreview() {
     return (<section className="restaurant-preview__background">

@@ -14,3 +14,12 @@
   margin-top: 56px;
   margin-bottom: 16px;
 }
+
+.main__restaurants-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 32px);
+  justify-content: space-between;
+  margin-left: -32px;
+  margin-bottom: 80px;
+}

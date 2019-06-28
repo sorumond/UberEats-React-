@@ -1,5 +1,5 @@
 import React from 'react';
-import './proposition-type.css';
+import './proposion-type.css';
 
 export function PropositionType() {
     return (
