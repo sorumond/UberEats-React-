@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 export function Header() {
     return (<header className="Header">
         <div className="Header__wrapper">
-            <div className="Header__logo--wrapper">
+            <div className="Header__logo-wrapper">
                 <Link className="Header__logo" to={'/'}>
                 </Link>
             </div>
