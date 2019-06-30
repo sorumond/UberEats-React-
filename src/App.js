@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import {Header} from "./components/header/header";
-import {Main} from "./components/main/main";
-import {Footer} from "./components/footer/footer";
+import {Header} from "./components/Header/Header.jsx";
+import {Main} from "./components/Main/Main.jsx";
+import {Footer} from "./components/Footer/Footer.jsx";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import {RestaurantPage} from "./components/restaurant-page/restaurant-page";
+import {RestaurantPage} from "./components/Restaurant-page/Restaurant-page.jsx";
 
 
 function App() {

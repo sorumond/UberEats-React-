@@ -1,0 +1,25 @@
+.Main {
+  margin-top: 104px;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.Main__city {
+  font-size: 22px;
+  line-height: 34px;
+  color: var(--font_black);
+  margin-top: 56px;
+  margin-bottom: 16px;
+}
+
+.Main__restaurants-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 32px);
+  justify-content: space-between;
+  margin-left: -32px;
+  margin-bottom: 80px;
+}

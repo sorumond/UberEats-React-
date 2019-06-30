@@ -1,0 +1,47 @@
+
+.Restaurants-choose__wrapper {
+  flex-basis: calc(100%/3);
+  padding-left: 32px;
+  flex-grow: 1;
+  margin-bottom: 16px;
+  padding-bottom: 20px;
+}
+
+.Restaurants-choose {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0;
+  text-decoration: none;
+}
+
+.Restaurants-choose__photo {
+  width: calc(100%);
+  height: 256px;
+  margin-left: 1px;
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease-out;
+}
+
+.Restaurants-choose:hover .Restaurants-choose__photo {
+  top: -10px;
+}
+
+.Restaurants-choose__name {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--font_black);
+}
+
+.Restaurants-choose__about {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--font_grey);
+}
+
+.Restaurants-choose__delivery-time {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--font_black);
+}

@@ -1,0 +1,17 @@
+.Restaurant-preview__name {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--font_black);
+}
+
+.Restaurant-preview__about {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--font_grey);
+}
+
+.Restaurant-preview__delivery-time {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--font_black);
+}
