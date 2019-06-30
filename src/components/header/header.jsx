@@ -11,7 +11,9 @@ export function Header() {
                 <Link className="header__logo" to={'/'}>
                 </Link>
             </div>
-            <OrderDelivery/>
+            <div className={'header__order-delivery'}>
+                <OrderDelivery/>
+            </div>
             <PersonalAreaBar/>
         </div>
     </header>)

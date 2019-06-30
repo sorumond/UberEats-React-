@@ -1,7 +1,6 @@
 import React from 'react';
 import './restaurants-choose.css';
 import {Link} from "react-router-dom";
-import {restaurants} from '../info.js';
 
 export function RestaurantChoose(props) {
     return (<div className="restaurants-choose__wrapper">
