@@ -6,7 +6,9 @@ import {restaurants} from '../info.js';
 
 export function Main() {
     return (<main className="Main">
-            <Search/>
+            <div className="Main__search">
+                <Search/>
+            </div>
             <p className="Main__city">Kyiv Restaurants</p>
             <div className="Main__restaurants-list">
                 {restaurants.map((restaurant, i) => {
