@@ -1,17 +1,50 @@
+.Restaurant-preview__background {
+  background: url("image/d42ea9bbf7aff297c2e1eb5e5f3b7fa6-w1080-87.png") no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.Restaurant-preview__wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.Restaurant-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  background: var(--white);
+  flex-basis: 389px;
+  padding: 38px;
+}
+
 .Restaurant-preview__name {
-  font-size: 18px;
-  line-height: 24px;
+  flex-basis: 100%;
+  font-size: 36px;
+  line-height: 42px;
   color: var(--font_black);
+  margin-top: 0;
+  margin-bottom: 54px;
 }
 
 .Restaurant-preview__about {
-  font-size: 16px;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 16px;
   color: var(--font_grey);
+  align-self: center;
 }
 
 .Restaurant-preview__delivery-time {
-  font-size: 16px;
-  line-height: 21px;
-  color: var(--font_black);
+  padding: 8px 16px;
+  background-color: var(--background_black);
+  font-size: 13px;
+  line-height: 15px;
+  color: var(--white);
+  align-self: center;
+  border-radius: 16px;
+  margin-bottom: 0;
 }
