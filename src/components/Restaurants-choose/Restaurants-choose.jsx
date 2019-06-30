@@ -3,8 +3,8 @@ import './Restaurants-choose.css';
 import {Link} from "react-router-dom";
 
 export function RestaurantChoose(props) {
-    return (<div className="Restaurants-choose__wrapper">
-            <Link to={`restaurant-page`} className="Restaurants-choose">
+    return (<div className="Restaurants-choose">
+            <Link to={`restaurant-page`} className="Restaurants-choose__link">
                 <div className="restaurants-choose__header">
                     <img src={props.imageUrl} className="Restaurants-choose__photo" alt={props.title}/>
                 </div>
