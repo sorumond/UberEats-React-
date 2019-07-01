@@ -90,7 +90,8 @@ export const restaurantMenu = {
         }
     ,
     "largeImageUrl":
-        "https://uber-eats-mates.herokuapp.com/images/48f30dc6-245f-4257-9b6f-8fc00c510fd9.jpg.jpg", "items":
+        "https://uber-eats-mates.herokuapp.com/images/48f30dc6-245f-4257-9b6f-8fc00c510fd9.jpg.jpg",
+        "items":
         {
             "6f5a0c7a-b401-4f78-ac3b-0de5cea3fc1c":
                 {

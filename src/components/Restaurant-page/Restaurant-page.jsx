@@ -5,7 +5,6 @@ import {PropositionType} from "./Proposition-type/Proposition-type";
 import {Menu} from "./Menu/Menu";
 
 
-
 export function RestaurantPage () {
   return (
       <main className="Restaurant-page">

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Proposion-type.css';
 
+
 export function PropositionType() {
     return (
         <section className="Proposition-type">
