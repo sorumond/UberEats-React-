@@ -2,12 +2,7 @@ import React from "react";
 import "./Restaurants-choose.css";
 import { Link } from "react-router-dom";
 
-
-
 export function RestaurantChoose(props) {
-  let newVar = 'blablabla'
-  let bla = 'blala?'
-
   return (
     <div className="Restaurants-choose">
       <Link to={`restaurant-page`} className="Restaurants-choose__link">
