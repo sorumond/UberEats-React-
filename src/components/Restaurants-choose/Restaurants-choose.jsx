@@ -2,8 +2,7 @@ import React from "react";
 import "./Restaurants-choose.css";
 import { Link } from "react-router-dom";
 
-const someUnneededVar = 'Hello';
-let byebye = 'osdiijf'
+let newVar = 'blablabla'
 
 export function RestaurantChoose(props) {
   return (
