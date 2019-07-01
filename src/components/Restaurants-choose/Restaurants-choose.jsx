@@ -3,6 +3,7 @@ import "./Restaurants-choose.css";
 import { Link } from "react-router-dom";
 
 const someUnneededVar = 'Hello';
+let byebye = 'osdiijf'
 
 export function RestaurantChoose(props) {
   return (
