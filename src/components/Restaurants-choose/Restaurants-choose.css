@@ -1,6 +1,5 @@
-
 .Restaurants-choose {
-  flex-basis: calc(100%/3);
+  flex-basis: calc(100% / 3);
   padding-left: 32px;
   flex-grow: 1;
   margin-bottom: 16px;
