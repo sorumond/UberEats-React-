@@ -12,6 +12,7 @@
   display: flex;
   flex-basis: 50%;
   padding-right: 0;
+  min-height: 160px;
 }
 
 .Dish__header {
@@ -56,4 +57,5 @@
   width: 160px;
   height: 160px;
   flex-grow: 0;
+  flex-shrink: 0;
 }

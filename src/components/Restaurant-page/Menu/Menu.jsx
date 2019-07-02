@@ -10,7 +10,9 @@ export function Menu() {
         {restaurantMenu.sections.map((section, i) => {
           return (
             <div>
-              <span className={"Menu__type"}>{section.title}</span>
+              <span className={"Menu__type"} id={`${section.title}`}>
+                {section.title}
+              </span>
               <div className={"Menu__list"}>
                 {section.itemUuids.map((item, i) => {
                   return <Dish id={item} />;
@@ -19,18 +21,6 @@ export function Menu() {
             </div>
           );
         })}
-        {/*<span className="Menu__type">Закуски</span>*/}
-        {/*<div className="Menu__list">*/}
-        {/*    <Dish dish={restaurantMenu.items}*/}
-        {/*          image={restaurantMenu.largeImageUrl}*/}
-        {/*          title={restaurantMenu.title}*/}
-        {/*          sections={restaurantMenu.sections}/>*/}
-        {/*    <Dish/>*/}
-        {/*    <Dish/>*/}
-        {/*    <Dish/>*/}
-        {/*    <Dish/>*/}
-        {/*    <Dish/>*/}
-        {/*</div>*/}
       </div>
     </section>
   );

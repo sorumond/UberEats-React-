@@ -2,7 +2,10 @@ import React from "react";
 import "./Search.css";
 import search from "./image/search.svg";
 
-export function Search() {
+export function Search(props) {
+  function onInputHandler(event) {
+    props.updateSearch(event.target.value);
+  }
   return (
     <div className="Search">
       <img src={search} alt="" className="Search__button" />
@@ -10,6 +13,7 @@ export function Search() {
         type="text"
         className="Search__text"
         placeholder="Search for restaurant or cuisine"
+        onInput={onInputHandler}
       />
     </div>
   );

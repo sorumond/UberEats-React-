@@ -4,27 +4,64 @@ import { Search } from "../Search/Search";
 import { RestaurantChoose } from "../Restaurants-choose/Restaurants-choose";
 import { restaurants } from "../info.js";
 
-export function Main() {
-  return (
-    <main className="Main">
-      <div className="Main__search">
-        <Search />
-      </div>
-      <p className="Main__city">Kyiv Restaurants</p>
-      <div className="Main__restaurants-list">
-        {restaurants.map((restaurant, i) => {
-          return (
-            <RestaurantChoose
-              key={i}
-              title={restaurant.title}
-              categories={restaurant.categories}
-              priceBucket={restaurant.priceBucket}
-              imageUrl={restaurant.imageUrl}
-              etaRange={restaurant.etaRange}
-            />
-          );
-        })}
-      </div>
-    </main>
-  );
+export class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchValue: ""
+    };
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+  updateSearch(input) {
+    this.setState(state => ({
+      searchValue: input
+    }));
+  }
+  ifTagsInclude(restaurant) {
+    for (let i = 0; i < restaurant.tags.length; i++) {
+      if (
+        restaurant.tags[i].name
+          .toLowerCase()
+          .includes(this.state.searchValue.toLocaleLowerCase())
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+  render() {
+    return (
+      <main className="Main">
+        <div className="Main__search">
+          <Search updateSearch={this.updateSearch} />
+        </div>
+        <p className="Main__city">Kyiv Restaurants</p>
+        <div className="Main__restaurants-list">
+          {restaurants
+            .filter((restaurant, i) => {
+              // eslint-disable-next-line no-mixed-operators
+              return (
+                restaurant.title
+                  .toLowerCase()
+                  .includes(this.state.searchValue.toLocaleLowerCase()) ||
+                // eslint-disable-next-line no-mixed-operators
+                (restaurant.tags && this.ifTagsInclude(restaurant))
+              );
+            })
+            .map((restaurant, i) => {
+              return (
+                <RestaurantChoose
+                  key={i}
+                  title={restaurant.title}
+                  categories={restaurant.categories}
+                  priceBucket={restaurant.priceBucket}
+                  imageUrl={restaurant.imageUrl}
+                  etaRange={restaurant.etaRange}
+                />
+              );
+            })}
+        </div>
+      </main>
+    );
+  }
 }
