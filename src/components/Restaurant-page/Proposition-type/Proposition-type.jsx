@@ -1,19 +1,22 @@
 import React from "react";
 import "./Proposion-type.css";
+import { restaurantMenu } from "../infoRestaurant";
 
 export function PropositionType() {
   return (
     <section className="Proposition-type">
       <div className="Proposition-type__wrapper">
         <ul className="Proposition-type__list">
-          <li className="Proposition-type__item Proposition-type__item--active">
-            Закуски
-          </li>
-          <li className="Proposition-type__item">Салаты</li>
-          <li className="Proposition-type__item">Супы</li>
-          <li className="Proposition-type__item">Горячие блюда</li>
-          <li className="Proposition-type__item">Гарниры</li>
-          <li className="Proposition-type__item">Десерты</li>
+          {restaurantMenu.sections.map((section, i) => {
+            return (
+              <a
+                href={`#${section.title}`}
+                className={"Proposition-type__link"}
+              >
+                <li className="Proposition-type__item">{section.title}</li>
+              </a>
+            );
+          })}
         </ul>
       </div>
     </section>

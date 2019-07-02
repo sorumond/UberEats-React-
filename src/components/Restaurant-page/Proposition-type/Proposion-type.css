@@ -1,5 +1,14 @@
 .Proposition-type {
   border-bottom: 1px solid var(--border_light_grey);
+  position: sticky;
+  top: 73px;
+  background: var(--white);
+  z-index: 1;
+  box-shadow: 0 0 16px rgba(38, 38, 38, 0.16);
+}
+
+.Proposition-type__link {
+  text-decoration: none;
 }
 
 .Proposition-type__wrapper {
@@ -25,6 +34,6 @@
   color: var(--font_grey);
 }
 
-.Proposition-type__item--active {
+.Proposition-type__item-active {
   color: var(--font-green);
 }
