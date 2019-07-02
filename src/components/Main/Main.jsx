@@ -29,6 +29,20 @@ export class Main extends React.Component {
     }
     return false;
   }
+
+  ifCategoriesInclude(restaurant) {
+    for (let i = 0; i < restaurant.categories.length; i++) {
+      if (
+        restaurant.categories[i].name
+          .toLowerCase()
+          .includes(this.state.searchValue.toLocaleLowerCase())
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   render() {
     return (
       <main className="Main">
@@ -39,13 +53,12 @@ export class Main extends React.Component {
         <div className="Main__restaurants-list">
           {restaurants
             .filter((restaurant, i) => {
-              // eslint-disable-next-line no-mixed-operators
               return (
                 restaurant.title
                   .toLowerCase()
                   .includes(this.state.searchValue.toLocaleLowerCase()) ||
-                // eslint-disable-next-line no-mixed-operators
-                (restaurant.tags && this.ifTagsInclude(restaurant))
+                (restaurant.tags && this.ifTagsInclude(restaurant)) ||
+                this.ifCategoriesInclude(restaurant)
               );
             })
             .map((restaurant, i) => {
