@@ -9,14 +9,14 @@ import { RestaurantPage } from "./components/Restaurant-page/Restaurant-page.jsx
 
 function App() {
   return (
-    <div>
+    <>
       <Router>
         <Header />
         <Route path="/" exact component={Main} />
         <Route path="/restaurant-page" component={RestaurantPage} />
       </Router>
       <Footer />
-    </div>
+    </>
   );
 }
 

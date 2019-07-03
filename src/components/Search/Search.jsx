@@ -1,6 +1,7 @@
 import React from "react";
 import "./Search.css";
 import search from "./image/search.svg";
+import { Throttle } from "react-throttle";
 
 export function Search(props) {
   function onInputHandler(event) {
