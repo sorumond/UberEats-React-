@@ -7,7 +7,7 @@ export function RestaurantPreview() {
   return (
     <section
       className="Restaurant-preview__background"
-      style={{ background: background }}
+      style={{ background: background, backgroundPosition: `center center` }}
     >
       <div className="Restaurant-preview__wrapper">
         <div className="restaurant-preview Restaurant-preview">
