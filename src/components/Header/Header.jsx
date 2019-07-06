@@ -4,7 +4,7 @@ import { OrderDelivery } from "../Order-delivery/Order-delivery.jsx";
 import { PersonalAreaBar } from "../Personal-area-bar/Personal-area-bar";
 import { Link } from "react-router-dom";
 
-export function Header() {
+export function Header(props) {
   return (
     <header className="Header">
       <div className="Header__wrapper">
@@ -14,7 +14,7 @@ export function Header() {
         <div className={"header__order-delivery"}>
           <OrderDelivery />
         </div>
-        <PersonalAreaBar />
+        <PersonalAreaBar open={props.open} />
       </div>
     </header>
   );

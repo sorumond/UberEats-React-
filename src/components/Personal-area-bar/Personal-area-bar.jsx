@@ -2,7 +2,7 @@ import React from "react";
 import "./Personal-area-bar.css";
 import basket from "./image/basket.svg";
 
-export function PersonalAreaBar() {
+export function PersonalAreaBar(props) {
   return (
     <div className="Personal-area-bar">
       <a href="javascript:void(0)" className="Personal-area-bar__sign-in">
@@ -13,7 +13,13 @@ export function PersonalAreaBar() {
           Register
         </a>
       </div>
-      <a href="javascript: void (0)" className="personal-area-bar__basket">
+      <a
+        href="javascript: void (0)"
+        className="personal-area-bar__basket"
+        onClick={() => {
+          props.open(true);
+        }}
+      >
         <img
           src={basket}
           alt="basket"

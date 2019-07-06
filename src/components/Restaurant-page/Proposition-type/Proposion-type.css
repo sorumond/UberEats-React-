@@ -5,21 +5,25 @@
   background: var(--white);
   z-index: 1;
   box-shadow: 0 0 16px rgba(38, 38, 38, 0.16);
+  scroll-behavior: smooth;
 }
 
 .Proposition-type__link {
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 .Proposition-type__wrapper {
   width: 1000px;
   margin: 0 auto;
+  scroll-behavior: smooth;
 }
 
 .Proposition-type__list {
   display: flex;
   padding-left: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .Proposition-type__item {
@@ -32,8 +36,10 @@
   font-size: 16px;
   line-height: 19px;
   color: var(--font_grey);
+  scroll-behavior: smooth;
 }
 
 .Proposition-type__item-active {
   color: var(--font-green);
+  scroll-behavior: smooth;
 }

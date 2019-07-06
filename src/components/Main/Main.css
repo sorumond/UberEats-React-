@@ -5,6 +5,7 @@
   margin-left: auto;
   display: flex;
   flex-direction: column;
+  scroll-behavior: auto;
 }
 
 .Main__city {

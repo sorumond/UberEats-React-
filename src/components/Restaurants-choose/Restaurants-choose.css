@@ -4,6 +4,7 @@
   flex-grow: 0;
   margin-bottom: 16px;
   padding-bottom: 20px;
+  scroll-behavior: auto;
 }
 
 .Restaurants-choose__link {
@@ -12,6 +13,7 @@
   flex-direction: column;
   margin-right: 0;
   text-decoration: none;
+  scroll-behavior: auto;
 }
 
 .Restaurants-choose__photo {
@@ -22,26 +24,31 @@
   top: 0;
   transition: top 0.3s ease-out;
   object-fit: cover;
+  scroll-behavior: auto;
 }
 
 .Restaurants-choose:hover .Restaurants-choose__photo {
   top: -10px;
+  scroll-behavior: auto;
 }
 
 .Restaurants-choose__name {
   font-size: 18px;
   line-height: 24px;
   color: var(--font_black);
+  scroll-behavior: auto;
 }
 
 .Restaurants-choose__about {
   font-size: 16px;
   line-height: 21px;
   color: var(--font_grey);
+  scroll-behavior: auto;
 }
 
 .Restaurants-choose__delivery-time {
   font-size: 16px;
   line-height: 21px;
   color: var(--font_black);
+  scroll-behavior: auto;
 }
