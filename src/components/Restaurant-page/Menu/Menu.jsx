@@ -3,7 +3,7 @@ import "./Menu.css";
 import { Dish } from "../Dish/Dish";
 import { restaurantMenu } from "../infoRestaurant";
 
-export function Menu() {
+export function Menu(props) {
   return (
     <section className="menu">
       <div className="Menu__wrapper">
@@ -15,7 +15,7 @@ export function Menu() {
               </span>
               <div className={"Menu__list"}>
                 {section.itemUuids.map((item, i) => {
-                  return <Dish id={item} />;
+                  return <Dish id={item} basketOrders={props.basketOrders} />;
                 })}
               </div>
             </div>

@@ -8,20 +8,28 @@ import { RestaurantPage } from "./components/Restaurant-page/Restaurant-page.jsx
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Basket } from "./components/Basket/Basket";
 
+let basketOrders = [];
+
 function App() {
   const [openBasket, setOpenBasket] = useState(false);
   return (
     <>
       <Router>
         <ScrollToTop>
-          {openBasket && <Basket />}
+          {openBasket && (
+            <Basket basketOrders={basketOrders} setOpenBasket={setOpenBasket} />
+          )}
           <Header open={setOpenBasket} />
           <Route path="/" exact component={Main} />
-          <Route path="/restaurant-page" component={RestaurantPage} />
+          <Route
+            path="/restaurant-page"
+            component={() => <RestaurantPage basketOrders={basketOrders} />}
+          />
         </ScrollToTop>
       </Router>
       <Footer />
     </>
   );
 }
+
 export default App;

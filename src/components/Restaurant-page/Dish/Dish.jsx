@@ -1,12 +1,28 @@
 import React from "react";
 import "./Dish.css";
-import dishImage from "./image/dish_1.png";
 import { restaurantMenu } from "../infoRestaurant";
 
 export function Dish(props) {
   const image = restaurantMenu.items[props.id].imageUrl;
+
+  function addToBasket() {
+    let isDishInBasket = props.basketOrders.find(basketOrder => {
+      return basketOrder.dishInfo.uuid === props.id;
+    });
+    if (isDishInBasket) {
+      return;
+    } else {
+      props.basketOrders.push({ dishInfo: restaurantMenu.items[props.id] });
+    }
+  }
+
   return (
-    <div className="Dish">
+    <div
+      className="Dish"
+      onClick={() => {
+        addToBasket();
+      }}
+    >
       <div className="Dish__about">
         <div className="Dish__header">
           <span className="Dish__name">

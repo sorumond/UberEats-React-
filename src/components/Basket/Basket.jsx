@@ -1,8 +1,7 @@
 import React from "react";
-import BasketImage from "./image/basket.svg";
 import "./Basket.css";
 
-export function Basket() {
+export function Basket(props) {
   return (
     <div className="basket">
       <div className="basket__wrapper">
@@ -23,6 +22,9 @@ export function Basket() {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
+              onClick={() => {
+                props.setOpenBasket(false);
+              }}
             >
               <path
                 d="m19.5831 6.24931-1.8333-1.83329-5.75 5.83328-5.75-5.83328-1.8333 1.83329 5.8333 5.74999-5.8333 5.75 1.8333 1.8333 5.75-5.8333 5.75 5.8333 1.8333-1.8333-5.8333-5.75z"
@@ -32,6 +34,32 @@ export function Basket() {
           </div>
 
           <div className="basket__main">
+            {props.basketOrders.map(basketOrder => {
+              return (
+                <div className="basket__choose">
+                  <select className="basket__select">
+                    <option>Удалить</option>
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                  <span className="basket__dish">
+                    {basketOrder.dishInfo.title}
+                  </span>
+                  <span className="basket__price">
+                    {basketOrder.dishInfo.price / 100}грн.
+                  </span>
+                </div>
+              );
+            })}
+
             <div className="basket__choose">
               <select className="basket__select">
                 <option>Удалить</option>

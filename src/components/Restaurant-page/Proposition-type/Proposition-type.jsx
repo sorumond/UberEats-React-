@@ -12,6 +12,7 @@ export function PropositionType() {
               <a
                 href={`#${section.title}`}
                 className={"Proposition-type__link"}
+                key={section.title}
               >
                 <li className="Proposition-type__item">{section.title}</li>
               </a>

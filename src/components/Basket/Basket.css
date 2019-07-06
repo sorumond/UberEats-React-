@@ -22,7 +22,7 @@
 
 .basket__choose {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: #1f1f1f;
   font-family: Roboto, sans-serif;
