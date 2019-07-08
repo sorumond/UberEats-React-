@@ -6,13 +6,18 @@ export function Dish(props) {
   const image = restaurantMenu.items[props.id].imageUrl;
 
   function addToBasket() {
-    let isDishInBasket = props.basketOrders.find(basketOrder => {
+    let isDishInBasket = props.basketOrders.findIndex(basketOrder => {
       return basketOrder.dishInfo.uuid === props.id;
     });
-    if (isDishInBasket) {
+    console.log(isDishInBasket);
+    if (isDishInBasket !== -1) {
+      props.basketOrders[isDishInBasket].count++;
       return;
     } else {
-      props.basketOrders.push({ dishInfo: restaurantMenu.items[props.id] });
+      props.basketOrders.push({
+        dishInfo: restaurantMenu.items[props.id],
+        count: 1
+      });
     }
   }
 

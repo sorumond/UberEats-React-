@@ -9,13 +9,19 @@ export function Menu(props) {
       <div className="Menu__wrapper">
         {restaurantMenu.sections.map((section, i) => {
           return (
-            <div>
+            <div key={section.uuid}>
               <span className={"Menu__type"} id={`${section.title}`}>
                 {section.title}
               </span>
               <div className={"Menu__list"}>
                 {section.itemUuids.map((item, i) => {
-                  return <Dish id={item} basketOrders={props.basketOrders} />;
+                  return (
+                    <Dish
+                      id={item}
+                      basketOrders={props.basketOrders}
+                      key={item}
+                    />
+                  );
                 })}
               </div>
             </div>

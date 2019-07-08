@@ -45,3 +45,8 @@
 .Personal-area-bar__register:active {
   opacity: 0.5;
 }
+
+.Personal-area-bar__basket {
+  background: none;
+  border: none;
+}

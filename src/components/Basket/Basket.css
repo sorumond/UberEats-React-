@@ -1,4 +1,4 @@
-.basket {
+.Basket {
   position: fixed;
   top: 0;
   height: 100vh;
@@ -8,7 +8,7 @@
   z-index: 20;
 }
 
-.basket__header {
+.Basket__header {
   height: 80px;
   display: flex;
   justify-content: space-around;
@@ -16,11 +16,11 @@
   border-bottom: 1px solid lightgrey;
 }
 
-.basket__main {
+.Basket__main {
   padding-top: 25px;
 }
 
-.basket__choose {
+.Basket__choose {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +30,7 @@
   font-weight: 300;
 }
 
-.basket__select {
+.Basket__select {
   height: 50px;
   width: 80px;
   background: lightgrey;
@@ -39,7 +39,7 @@
   border-bottom: 1px solid gray;
 }
 
-.basket__payment {
+.Basket__payment {
   background: rgb(62, 153, 32);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px, rgba(0, 0, 0, 0.04) 0px 4px 4px;
   padding: 20px;
@@ -53,7 +53,7 @@
   font-size: 18px;
 }
 
-.basket__amount-dishes {
+.Basket__amount-dishes {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,14 +62,14 @@
   border: 1px solid white;
 }
 
-.basket__block {
+.Basket__block {
   display: flex;
   height: 20%;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.basket__wrapper {
+.Basket__wrapper {
   background: white;
   width: 30%;
   position: absolute;
@@ -85,4 +85,9 @@
   font-size: 18px;
   color: #1f1f1f;
   z-index: 20;
+  padding-left: 15px;
+}
+
+.Basket__close {
+  cursor: pointer;
 }
