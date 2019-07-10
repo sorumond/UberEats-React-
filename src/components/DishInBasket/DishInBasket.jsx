@@ -6,10 +6,7 @@ export function DishInBasket(props) {
   function onSelectChange(event) {
     if (event.target.value === "delete") {
       props.basketOrders.splice(props.index, 1);
-      let newArray = props.basketOrders.filter(basketOrder => {
-        return basketOrder !== props.basketOrders[props.index];
-      });
-      props.setBasketArray(newArray);
+      props.setBasketArray({ ...props.basketOrders });
     } else {
       setCount(event.target.value);
       props.basketOrders[props.index].count = event.target.value;

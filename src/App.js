@@ -11,7 +11,7 @@ import { Basket } from "./components/Basket/Basket";
 let basketOrders = [];
 
 function App() {
-  const [basketArray, setBasketArray] = useState(basketOrders);
+  const [basketArray, setBasketArray] = useState({ ...basketOrders });
   const [openBasket, setOpenBasket] = useState(false);
   return (
     <>
