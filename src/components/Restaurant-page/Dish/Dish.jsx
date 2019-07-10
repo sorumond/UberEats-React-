@@ -9,7 +9,6 @@ export function Dish(props) {
     let isDishInBasket = props.basketOrders.findIndex(basketOrder => {
       return basketOrder.dishInfo.uuid === props.id;
     });
-    console.log(isDishInBasket);
     if (isDishInBasket !== -1) {
       props.basketOrders[isDishInBasket].count++;
       return;

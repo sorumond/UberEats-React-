@@ -28,7 +28,6 @@ export class RestaurantPage extends React.Component {
   }
 
   render() {
-    console.log(this.state.id);
     return (
       <main className="Restaurant-page">
         {this.state.restaurantMenu ? (
