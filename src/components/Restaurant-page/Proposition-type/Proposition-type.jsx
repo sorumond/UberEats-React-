@@ -1,9 +1,9 @@
 import React from "react";
 import "./Proposion-type.css";
-import { restaurantMenu } from "../infoRestaurant";
 import { Container } from "../../../Container/Container";
 
-export function PropositionType() {
+export function PropositionType(props) {
+  const restaurantMenu = props.restaurantMenu;
   return (
     <section className="Proposition-type">
       <Container>

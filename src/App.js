@@ -28,9 +28,10 @@ function App() {
           <Header open={setOpenBasket} />
           <Route path="/" exact component={Main} />
           <Route
-            path="/restaurant-page"
-            component={() => (
+            path="/restaurant-page/:id"
+            component={props => (
               <RestaurantPage
+                match={props.match}
                 basketOrders={basketOrders}
                 basketArray={basketArray}
                 setBasketArray={setBasketArray}

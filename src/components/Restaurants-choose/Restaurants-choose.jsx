@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 export function RestaurantChoose(props) {
   return (
     <div className="Restaurants-choose">
-      <Link to={`restaurant-page`} className="Restaurants-choose__link">
+      <Link
+        to={`restaurant-page/${props.uuid}`}
+        className="Restaurants-choose__link"
+      >
         <div className="restaurants-choose__header">
           <img
             src={props.imageUrl}

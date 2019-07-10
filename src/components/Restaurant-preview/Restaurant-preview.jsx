@@ -1,8 +1,8 @@
 import React from "react";
 import "./Restaurant-preview.css";
-import { restaurantMenu } from "../Restaurant-page/infoRestaurant";
 
-export function RestaurantPreview() {
+export function RestaurantPreview(props) {
+  const restaurantMenu = props.restaurantMenu;
   const background = `url(${restaurantMenu.largeImageUrl})`;
   return (
     <section
