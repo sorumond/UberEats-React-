@@ -32,7 +32,7 @@
   position: relative;
 }
 
-.Dish__about::before {
+.Dish__about:hover::before {
   position: absolute;
   content: "";
   width: 100%;
