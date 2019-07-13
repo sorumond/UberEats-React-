@@ -17,6 +17,13 @@
   cursor: pointer;
 }
 
+.Dish__wrapper {
+  display: flex;
+  border: 1px solid var(--border_grey);
+  position: relative;
+  width: 100%;
+}
+
 .Dish__header {
   display: flex;
   flex-direction: column;
@@ -27,12 +34,11 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
-  border: 1px solid var(--border_grey);
   flex-grow: 1;
   position: relative;
 }
 
-.Dish__about:hover::before {
+.Dish__wrapper:hover::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -56,8 +62,10 @@
 }
 
 .Dish__photo {
+  box-sizing: border-box;
   width: 160px;
-  height: 160px;
+  min-height: 160px;
   flex-grow: 0;
   flex-shrink: 0;
+  object-fit: cover;
 }

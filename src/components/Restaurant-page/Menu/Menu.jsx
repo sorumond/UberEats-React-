@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Menu.css";
 import { Dish } from "../Dish/Dish";
-// import { restaurantMenu } from "../infoRestaurant";
 
 export function Menu(props) {
   return (
@@ -22,6 +21,7 @@ export function Menu(props) {
                           id={item}
                           basketOrders={props.basketOrders}
                           key={item}
+                          addToBasket={props.addToBasket}
                         />
                       );
                     })}

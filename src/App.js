@@ -8,41 +8,69 @@ import { RestaurantPage } from "./components/Restaurant-page/Restaurant-page.jsx
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Basket } from "./components/Basket/Basket";
 
-let basketOrders = [];
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      basketOrders:
+        JSON.parse(window.localStorage.getItem("basketOrders")) || [],
+      isBasketOpen: false
+    };
+  }
 
-function App() {
-  const [basketArray, setBasketArray] = useState({ ...basketOrders });
-  const [openBasket, setOpenBasket] = useState(false);
-  return (
-    <>
-      <Router>
-        <ScrollToTop>
-          {openBasket && (
-            <Basket
-              basketOrders={basketOrders}
-              setOpenBasket={setOpenBasket}
-              basketArray={basketArray}
-              setBasketArray={setBasketArray}
-            />
-          )}
-          <Header open={setOpenBasket} />
-          <Route path="/" exact component={Main} />
-          <Route
-            path="/restaurant-page/:id"
-            component={props => (
-              <RestaurantPage
-                match={props.match}
-                basketOrders={basketOrders}
-                basketArray={basketArray}
-                setBasketArray={setBasketArray}
+  setOpenBasket = () => {
+    this.setState({ isBasketOpen: !this.state.isBasketOpen });
+  };
+
+  addToBasket = newOrderArray => {
+    this.setState({ basketOrders: [...newOrderArray] });
+    window.localStorage.setItem(
+      "basketOrders",
+      JSON.stringify([...newOrderArray])
+    );
+  };
+
+  removeFromBasket = dish => {
+    let newArray = this.state.basketOrders.filter(basketOrder => {
+      return basketOrder !== dish;
+    });
+    this.setState({
+      basketOrders: [...newArray]
+    });
+    window.localStorage.setItem("basketOrders", JSON.stringify([...newArray]));
+  };
+
+  render() {
+    return (
+      <>
+        <Router>
+          <ScrollToTop>
+            {this.state.isBasketOpen && (
+              <Basket
+                basketOrders={this.state.basketOrders}
+                setOpenBasket={this.setOpenBasket}
+                removeFromBasket={this.removeFromBasket}
+                addToBasket={this.addToBasket}
               />
             )}
-          />
-        </ScrollToTop>
-      </Router>
-      <Footer />
-    </>
-  );
+            <Header open={this.setOpenBasket} />
+            <Route path="/" exact component={Main} />
+            <Route
+              path="/restaurant-page/:id"
+              component={props => (
+                <RestaurantPage
+                  match={props.match}
+                  basketOrders={this.state.basketOrders}
+                  addToBasket={this.addToBasket}
+                />
+              )}
+            />
+          </ScrollToTop>
+        </Router>
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;

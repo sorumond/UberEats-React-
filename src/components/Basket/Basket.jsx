@@ -4,6 +4,27 @@ import basketImage from "./image/basket.svg";
 import { DishInBasket } from "../DishInBasket/DishInBasket";
 
 export function Basket(props) {
+  function totalCount() {
+    let total = 0;
+    props.basketOrders.map(basketOrder => {
+      total += basketOrder.count;
+      return false;
+    });
+    return total;
+  }
+  let count = totalCount();
+
+  function totalMoney() {
+    let total = 0;
+    props.basketOrders.map(basketOrder => {
+      total += basketOrder.dishInfo.price * basketOrder.count;
+      return false;
+    });
+    return total;
+  }
+
+  let money = totalMoney();
+
   return (
     <div className="Basket">
       <div className="Basket__wrapper">
@@ -11,7 +32,7 @@ export function Basket(props) {
           <div className="Basket__header">
             <img src={basketImage} alt="basketImage" />
             <span className="basket__order-amount">
-              Ваш заказ <b>({3})</b>
+              Ваш заказ <b>({count})</b>
             </span>
             <svg
               width="24px"
@@ -37,7 +58,8 @@ export function Basket(props) {
                 <DishInBasket
                   basketOrder={basketOrder}
                   basketOrders={props.basketOrders}
-                  setBasketArray={props.setBasketArray}
+                  removeFromBasket={props.removeFromBasket}
+                  addToBasket={props.addToBasket}
                   index={i}
                 />
               );
@@ -45,10 +67,10 @@ export function Basket(props) {
           </div>
         </div>
         <div className=" Basket__payment">
-          <div className="Basket__amount-dishes">3</div>
+          <div className="Basket__amount-dishes">{count}</div>
           <span className="basket__next-step">Далее: оплата</span>
           <span className="basket__price basket__price--payment">
-            440,00грн.
+            {money / 100}грн.
           </span>
         </div>
       </div>

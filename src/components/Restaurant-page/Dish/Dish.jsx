@@ -5,48 +5,51 @@ export function Dish(props) {
   const restaurantMenu = props.restaurantMenu;
   const image = restaurantMenu.items[props.id].imageUrl;
 
-  function addToBasket() {
-    let isDishInBasket = props.basketOrders.findIndex(basketOrder => {
+  function addingDish() {
+    let orders = [...props.basketOrders];
+    let isDishInBasket = orders.findIndex(basketOrder => {
       return basketOrder.dishInfo.uuid === props.id;
     });
     if (isDishInBasket !== -1) {
-      props.basketOrders[isDishInBasket].count++;
-      return;
+      orders[isDishInBasket].count++;
     } else {
-      props.basketOrders.push({
+      orders.push({
         dishInfo: restaurantMenu.items[props.id],
         count: 1
       });
     }
+    props.addToBasket(orders);
   }
 
   return (
     <div
       className="Dish"
       onClick={() => {
-        addToBasket();
+        addingDish();
       }}
     >
-      <div className="Dish__about">
-        <div className="Dish__header">
-          <span className="Dish__name">
-            {restaurantMenu.items[props.id] &&
-              restaurantMenu.items[props.id].title}
-          </span>
-          <span className="Dish__recipe">
-            {restaurantMenu.items[props.id] &&
-              restaurantMenu.items[props.id].itemDescription}
-          </span>
+      <div className="Dish__wrapper">
+        <div className="Dish__about">
+          <div className="Dish__header">
+            <span className="Dish__name">
+              {restaurantMenu.items[props.id] &&
+                restaurantMenu.items[props.id].title}
+            </span>
+            <span className="Dish__recipe">
+              {restaurantMenu.items[props.id] &&
+                restaurantMenu.items[props.id].itemDescription}
+            </span>
+          </div>
+          <div className="dish__footer">
+            <span className="dish__price">
+              {restaurantMenu.items[props.id] &&
+                restaurantMenu.items[props.id].price / 100}
+              ₴
+            </span>
+          </div>
         </div>
-        <div className="dish__footer">
-          <span className="dish__price">
-            {restaurantMenu.items[props.id] &&
-              restaurantMenu.items[props.id].price / 100}
-            ₴
-          </span>
-        </div>
+        {image && <img src={image} alt="" className="Dish__photo" />}
       </div>
-      {image && <img src={image} alt="" className="Dish__photo" />}
     </div>
   );
 }

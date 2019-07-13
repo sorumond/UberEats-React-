@@ -9,10 +9,10 @@ export class RestaurantPage extends React.Component {
     super(props);
     this.state = {
       restaurantMenu: false,
-      id: props.match.params.id,
-      basketOrders: props.basketOrders
+      id: props.match.params.id
     };
   }
+
   componentDidMount() {
     fetch(
       `https://uber-eats-mates.herokuapp.com/api/v1/restaurants/${this.state.id}`
@@ -41,7 +41,8 @@ export class RestaurantPage extends React.Component {
           ""
         )}
         <Menu
-          basketOrders={this.state.basketOrders}
+          addToBasket={this.props.addToBasket}
+          basketOrders={this.props.basketOrders}
           restaurantMenu={this.state.restaurantMenu}
         />
       </main>

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 export function DishInBasket(props) {
   const [count, setCount] = useState(props.basketOrder.count);
-
+  const basketOrders = props.basketOrders;
   function onSelectChange(event) {
     if (event.target.value === "delete") {
-      props.basketOrders.splice(props.index, 1);
-      props.setBasketArray({ ...props.basketOrders });
+      props.removeFromBasket(props.basketOrder);
     } else {
       setCount(event.target.value);
-      props.basketOrders[props.index].count = event.target.value;
+      basketOrders[props.index].count = +event.target.value;
+      props.addToBasket(basketOrders);
     }
   }
 
