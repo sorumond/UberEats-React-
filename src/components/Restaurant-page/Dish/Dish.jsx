@@ -5,6 +5,7 @@ export function Dish(props) {
   const restaurantMenu = props.restaurantMenu;
   const image = restaurantMenu.items[props.id].imageUrl;
   let orders = [...props.basketOrders];
+
   function isDishInBasket() {
     return orders.find(order => {
       return order.dishInfo.uuid === props.id;

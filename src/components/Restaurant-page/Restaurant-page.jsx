@@ -4,11 +4,11 @@ import { RestaurantPreview } from "../Restaurant-preview/Restaurant-preview";
 import { PropositionType } from "./Proposition-type/Proposition-type";
 import { Menu } from "./Menu/Menu";
 
-export class RestaurantPage extends React.Component {
+export class RestaurantPage extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantMenu: false,
+      restaurantMenu: {},
       id: props.match.params.id
     };
   }
@@ -21,30 +21,41 @@ export class RestaurantPage extends React.Component {
         return response.json();
       })
       .then(loadedRestaurant => {
-        this.setState(state => ({
+        this.setState({
           restaurantMenu: loadedRestaurant
-        }));
+        });
       });
+  }
+
+  isNotEmpty(obj) {
+    for (let key in obj) {
+      return true;
+    }
+    return false;
   }
 
   render() {
     return (
       <main className="Restaurant-page">
-        {this.state.restaurantMenu ? (
+        {this.isNotEmpty(this.state.restaurantMenu) ? (
           <RestaurantPreview restaurantMenu={this.state.restaurantMenu} />
         ) : (
           ""
         )}
-        {this.state.restaurantMenu ? (
+        {this.isNotEmpty(this.state.restaurantMenu) ? (
           <PropositionType restaurantMenu={this.state.restaurantMenu} />
         ) : (
           ""
         )}
-        <Menu
-          addToBasket={this.props.addToBasket}
-          basketOrders={this.props.basketOrders}
-          restaurantMenu={this.state.restaurantMenu}
-        />
+        {this.isNotEmpty(this.state.restaurantMenu) ? (
+          <Menu
+            addToBasket={this.props.addToBasket}
+            basketOrders={this.props.basketOrders}
+            restaurantMenu={this.state.restaurantMenu}
+          />
+        ) : (
+          ""
+        )}
       </main>
     );
   }

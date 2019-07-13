@@ -8,7 +8,7 @@ import { RestaurantPage } from "./components/Restaurant-page/Restaurant-page.jsx
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Basket } from "./components/Basket/Basket";
 
-class App extends React.Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

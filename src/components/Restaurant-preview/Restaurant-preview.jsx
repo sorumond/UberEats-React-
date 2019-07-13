@@ -3,6 +3,7 @@ import "./Restaurant-preview.css";
 
 export function RestaurantPreview(props) {
   const restaurantMenu = props.restaurantMenu;
+
   return (
     <section className="Restaurant-preview__background">
       <img
