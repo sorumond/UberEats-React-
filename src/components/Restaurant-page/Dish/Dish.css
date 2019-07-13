@@ -24,6 +24,33 @@
   width: 100%;
 }
 
+.Dish__wrapper:hover::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--border_dark_grey);
+  opacity: 0.04;
+}
+
+.Dish__inBasket {
+  border: 1px solid green;
+}
+
+.Dish__inBasketCount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  text-align: center;
+  color: var(--white);
+  background: green;
+  height: 35px;
+  width: 35px;
+}
+
 .Dish__header {
   display: flex;
   flex-direction: column;
@@ -36,17 +63,6 @@
   padding: 16px;
   flex-grow: 1;
   position: relative;
-}
-
-.Dish__wrapper:hover::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: var(--border_dark_grey);
-  opacity: 0.04;
 }
 
 .Dish__name {

@@ -4,6 +4,18 @@ import "./Dish.css";
 export function Dish(props) {
   const restaurantMenu = props.restaurantMenu;
   const image = restaurantMenu.items[props.id].imageUrl;
+  let orders = [...props.basketOrders];
+  function isDishInBasket() {
+    return orders.find(order => {
+      return order.dishInfo.uuid === props.id;
+    });
+  }
+
+  function findPositionInBasket() {
+    return orders.findIndex(order => {
+      return order.dishInfo.uuid === props.id;
+    });
+  }
 
   function addingDish() {
     let orders = [...props.basketOrders];
@@ -28,7 +40,14 @@ export function Dish(props) {
         addingDish();
       }}
     >
-      <div className="Dish__wrapper">
+      <div
+        className={`Dish__wrapper ${isDishInBasket() ? "Dish__inBasket" : ""}`}
+      >
+        {isDishInBasket() ? (
+          <div className={"Dish__inBasketCount"}>
+            {orders[findPositionInBasket()].count}
+          </div>
+        ) : null}
         <div className="Dish__about">
           <div className="Dish__header">
             <span className="Dish__name">
