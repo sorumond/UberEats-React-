@@ -16,15 +16,17 @@ export function RestaurantPreview(props) {
           <span className="Restaurant-preview__name Restaurant-preview__name">
             {restaurantMenu.title}
           </span>
-          <span className="Restaurant-preview__about Restaurant-preview__about">
-            {restaurantMenu.priceBucket}{" "}
-            {restaurantMenu.categories.map(categorie => {
-              return ` • ${categorie.name}`;
-            })}{" "}
-          </span>
-          <span className="Restaurant-preview__delivery-time Restaurant-preview__delivery-time">
-            {restaurantMenu.etaRange.min} - {restaurantMenu.etaRange.max} min
-          </span>
+          <div className={"Restaurant-preview__footer"}>
+            <span className="Restaurant-preview__about">
+              {restaurantMenu.priceBucket}{" "}
+              {restaurantMenu.categories.map(categorie => {
+                return ` • ${categorie.name}`;
+              })}{" "}
+            </span>
+            <span className="Restaurant-preview__delivery-time">
+              {restaurantMenu.etaRange.min} - {restaurantMenu.etaRange.max} min
+            </span>
+          </div>
         </div>
       </div>
     </section>

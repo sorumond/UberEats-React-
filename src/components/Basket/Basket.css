@@ -57,8 +57,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25px;
-  width: 25px;
+  min-height: 25px;
+  min-width: 25px;
   border: 1px solid white;
 }
 
