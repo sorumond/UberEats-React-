@@ -40,6 +40,16 @@ class App extends React.PureComponent {
     window.localStorage.setItem("basketOrders", JSON.stringify([...newArray]));
   };
 
+  renderRestaurantPage = props => {
+    return (
+      <RestaurantPage
+        match={props.match}
+        basketOrders={this.state.basketOrders}
+        addToBasket={this.addToBasket}
+      />
+    );
+  };
+
   render() {
     return (
       <>
@@ -57,13 +67,7 @@ class App extends React.PureComponent {
             <Route path="/" exact component={Main} />
             <Route
               path="/restaurant-page/:id"
-              component={props => (
-                <RestaurantPage
-                  match={props.match}
-                  basketOrders={this.state.basketOrders}
-                  addToBasket={this.addToBasket}
-                />
-              )}
+              component={this.renderRestaurantPage}
             />
           </ScrollToTop>
         </Router>
