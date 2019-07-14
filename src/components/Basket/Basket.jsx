@@ -12,6 +12,7 @@ export function Basket(props) {
     });
     return total;
   }
+
   let count = totalCount();
 
   function totalMoney() {
@@ -26,7 +27,14 @@ export function Basket(props) {
   let money = totalMoney();
 
   return (
-    <div className="Basket">
+    <div
+      className="Basket"
+      onClick={event => {
+        if (event.target.matches(".Basket")) {
+          props.setOpenBasket();
+        }
+      }}
+    >
       <div className="Basket__wrapper">
         <div className="Basket__block">
           <div className="Basket__header">
@@ -41,7 +49,7 @@ export function Basket(props) {
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               onClick={() => {
-                props.setOpenBasket(false);
+                props.setOpenBasket();
               }}
               className={"Basket__close"}
             >
@@ -66,12 +74,14 @@ export function Basket(props) {
             })}
           </div>
         </div>
-        <div className=" Basket__payment">
-          <div className="Basket__amount-dishes">{count}</div>
-          <span className="basket__next-step">Далее: оплата</span>
-          <span className="basket__price basket__price--payment">
-            {money / 100}грн.
-          </span>
+        <div className="Basket__payment-wrapper">
+          <div className=" Basket__payment">
+            <div className="Basket__amount-dishes">{count}</div>
+            <span className="basket__next-step">Далее: оплата</span>
+            <span className="basket__price basket__price--payment">
+              {money / 100}грн.
+            </span>
+          </div>
         </div>
       </div>
     </div>
