@@ -4,6 +4,7 @@
 
 .Search__button {
   position: absolute;
+  cursor: pointer;
 }
 
 .Search__text {
