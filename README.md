@@ -1,6 +1,6 @@
 # Uber eats
 
-### [Demo](http://uber-eats-ruchkovlad.surge.sh/)
+### [Demo](http://uber-eats-sorumond.surge.sh)
 
 ### Delivery service website
 

@@ -62,9 +62,7 @@ export class Main extends React.Component {
     return (
       <Container>
         <main className="Main">
-          <div className="Main__search">
-            <Search updateSearch={this.updateSearch} />
-          </div>
+          <Search updateSearch={this.updateSearch} />
           <p className="Main__city">Kyiv Restaurants</p>
           <div className="Main__restaurants-list">
             {this.state.restaurants.length > 0
