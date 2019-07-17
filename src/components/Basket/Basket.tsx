@@ -3,10 +3,10 @@ import "./Basket.css";
 import basketImage from "./image/basket.svg";
 import { DishInBasket } from "../DishInBasket/DishInBasket";
 
-export function Basket(props) {
+export function Basket(props: any) {
   function totalCount() {
-    let total = 0;
-    props.basketOrders.map(basketOrder => {
+    let total: number = 0;
+    props.basketOrders.map((basketOrder: any) => {
       total += basketOrder.count;
       return false;
     });
@@ -16,21 +16,22 @@ export function Basket(props) {
   let count = totalCount();
 
   function totalMoney() {
-    let total = 0;
-    props.basketOrders.map(basketOrder => {
+    let total:number = 0;
+    props.basketOrders.map((basketOrder: any) => {
       total += basketOrder.dishInfo.price * basketOrder.count;
       return false;
     });
     return total;
   }
 
-  let money = totalMoney();
+  let money: number = totalMoney();
 
   return (
     <div
       className="Basket"
       onClick={event => {
-        if (event.target.matches(".Basket")) {
+        let target = event.target as HTMLTextAreaElement;
+        if (target.matches(".Basket")) {
           props.setOpenBasket();
         }
       }}
@@ -61,7 +62,7 @@ export function Basket(props) {
           </div>
 
           <div className="Basket__main">
-            {props.basketOrders.map((basketOrder, i) => {
+            {props.basketOrders.map((basketOrder: any, i: number) => {
               return (
                 <DishInBasket
                   basketOrder={basketOrder}
