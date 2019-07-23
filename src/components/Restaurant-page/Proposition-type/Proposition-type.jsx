@@ -40,10 +40,7 @@ export class PropositionType extends React.Component {
         let oldSection = this.state.sections;
         let addToButton = this.state.categoriesInButton;
         addToButton.push(oldSection.pop());
-        console.log("Старая секция= ", oldSection);
-        console.log("В кнопку= ", addToButton);
-        console.log(this.ulList.current.offsetWidth);
-        console.log(this.state.categoriesInButton);
+        addToButton.reverse();
         return {
           sections: [...oldSection],
           categoriesInButton: [...addToButton]
