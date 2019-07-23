@@ -70,6 +70,7 @@ export function Basket(props: any) {
                   removeFromBasket={props.removeFromBasket}
                   addToBasket={props.addToBasket}
                   index={i}
+                  key={basketOrder.dishInfo.uuid}
                 />
               );
             })}
