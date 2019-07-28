@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Basket.css";
 import basketImage from "./image/basket.svg";
 import { DishInBasket } from "../DishInBasket/DishInBasket";
+
+// export interface BasketOrder {
+//   count: number;
+// }
+//
+// export interface BasketProps {
+//   basketOrders: BasketOrder[]
+// }
 
 export function Basket(props: any) {
   function totalCount() {
