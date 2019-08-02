@@ -14,17 +14,15 @@ export class RestaurantPage extends React.PureComponent {
   }
 
   componentDidMount() {
-    fetch(
-      `https://uber-eats-mates.herokuapp.com/api/v1/restaurants/${this.state.id}`
-    )
-      .then(response => {
-        return response.json();
-      })
-      .then(loadedRestaurant => {
-        this.setState({
-          restaurantMenu: loadedRestaurant
-        });
+    (async () => {
+      const response = await fetch(
+        `https://uber-eats-mates.herokuapp.com/api/v1/restaurants/${this.state.id}`
+      );
+      const loadedRestaurant = await response.json();
+      await this.setState({
+        restaurantMenu: loadedRestaurant
       });
+    })();
   }
 
   isNotEmpty(obj) {

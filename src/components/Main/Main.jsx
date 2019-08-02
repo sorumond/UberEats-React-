@@ -15,15 +15,15 @@ export class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://uber-eats-mates.herokuapp.com/api/v1/restaurants")
-      .then(response => {
-        return response.json();
-      })
-      .then(loadedRestaurants => {
-        this.setState(state => ({
-          restaurants: loadedRestaurants
-        }));
+    (async () => {
+      const response = await fetch(
+        "https://uber-eats-mates.herokuapp.com/api/v1/restaurants"
+      );
+      const loadedRestaurants = await response.json();
+      await this.setState({
+        restaurants: loadedRestaurants
       });
+    })();
   }
 
   updateSearch(input) {

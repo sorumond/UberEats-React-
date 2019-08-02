@@ -14,9 +14,24 @@ export class PropositionType extends React.Component {
   }
 
   ulList = React.createRef();
+  closeOther = e => {
+    const isOtherTypeButton = e.target.matches(
+      ".Proposition-type__other-button"
+    );
 
+    if (!isOtherTypeButton) {
+      this.setState({
+        isModalOpened: false
+      });
+    }
+  };
   componentDidMount() {
     this.checkWidth();
+    window.addEventListener("click", this.closeOther);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.closeOther);
   }
 
   checkWidth = () => {
@@ -82,7 +97,7 @@ export class PropositionType extends React.Component {
                 onClick={this.openModal}
                 className={"Proposition-type__other-button"}
               >
-                Other 🡇
+                Other ⯆
               </button>
             )}
             {this.state.isModalOpened && (
